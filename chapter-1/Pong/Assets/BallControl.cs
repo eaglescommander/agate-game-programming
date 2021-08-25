@@ -8,8 +8,7 @@ public class BallControl : MonoBehaviour
     private Rigidbody2D rigidBody2D;
  
     // Besarnya gaya awal yang diberikan untuk mendorong bola
-    public float xInitialForce;
-    public float yInitialForce;
+    public float initialForce;
 
     // Titik asal lintasan bola saat ini
     private Vector2 trajectoryOrigin;
@@ -41,23 +40,15 @@ public class BallControl : MonoBehaviour
 
     void PushBall()
     {
-        // Tentukan nilai komponen y dari gaya dorong antara -yInitialForce dan yInitialForce
-        float yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
+        // Generate random radian dari 0 sampai 2phi untuk direction
+        float direction = Random.Range(0.0f,Mathf.PI*2); 
+        
+        // Generate force x dan y yang dibutuhkan sesuai dengan initial force
+        float xForce = Mathf.Cos(direction) * initialForce;
+        float yForce = Mathf.Sin(direction) * initialForce;
 
-        // Tentukan nilai acak antara 0 (inklusif) dan 2 (eksklusif)
-        float randomDirection = Random.Range(0, 2);
-
-        // Jika nilainya di bawah 1, bola bergerak ke kiri. 
-        // Jika tidak, bola bergerak ke kanan.
-        if (randomDirection < 1.0f)
-        {
-            // Gunakan gaya untuk menggerakkan bola ini.
-            rigidBody2D.AddForce(new Vector2(-xInitialForce, yRandomInitialForce));
-        }
-        else
-        {
-            rigidBody2D.AddForce(new Vector2(xInitialForce, yRandomInitialForce));
-        }
+        // Jadikan force tersebut vektor dan apply ke Ball
+        rigidBody2D.AddForce(new Vector2(xForce, yForce));
     }
 
     void RestartGame()
