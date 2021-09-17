@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -61,6 +64,7 @@ public class GameController : MonoBehaviour
         if(Enemies.Count == 0)
         {
             _isGameEnded = true;
+            StartCoroutine(SwitchSceneAfter(3, "Level2"));
         }
     }
 
@@ -77,5 +81,11 @@ public class GameController : MonoBehaviour
         {
             _shotBird.OnTap();
         }
+    }
+
+    private IEnumerator SwitchSceneAfter(float second, string scene)
+    {
+        yield return new WaitForSeconds(second);
+        SceneManager.LoadScene(scene);
     }
 }
