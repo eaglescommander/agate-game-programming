@@ -36,7 +36,6 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowWarning(float enemyDistance)
     {
-        Debug.Log("Test");
         warningText.text = string.Format("! {0} m",Mathf.RoundToInt(enemyDistance));
         anim.SetTrigger("Warning");
     }

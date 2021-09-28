@@ -71,6 +71,17 @@ public class PlayerHealth : MonoBehaviour
             Death ();
         }
     }
+
+    //fungsi untuk menambahkan health
+    public void Heal (int amount)
+    {
+        //mengurangi health
+        currentHealth = Mathf.Min(currentHealth + amount, 100);
+
+ 
+        //Merubah tampilan dari health slider
+        healthSlider.value = currentHealth;
+    }
  
  
     void Death ()
