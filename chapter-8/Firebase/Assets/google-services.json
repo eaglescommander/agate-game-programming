@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "347153960855",
+    "project_id": "nadhif-incremental-game",
+    "firebase_url": "gs://nadhif-incremental-game.appspot.com/",
+    "storage_bucket": "nadhif-incremental-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347153960855:android:c0a731fb79cdc5d4437ed2",
+        "android_client_info": {
+          "package_name": "com.nadhif.incrementalgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347153960855-cq6p9jgnre9n70o0vbubojh7bniqab90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3w6Z92cmy3RQvU5KfpUh16905gtvLI34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347153960855-cq6p9jgnre9n70o0vbubojh7bniqab90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
